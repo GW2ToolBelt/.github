@@ -8,6 +8,7 @@
         "gradle",
         "gradle-wrapper"
     ],
+    commitMessageExtra: "{{{#if isPinDigest}}{{{currentDigestShort}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{currentDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}} => {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}}}",
     dependencyDashboard: false,
     packageRules: [
         {
