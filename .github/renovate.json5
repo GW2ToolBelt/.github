@@ -28,6 +28,10 @@
         }
     ],
     dependencyDashboard: false,
+    ignorePresets: [
+        // Ensure we get the latest version and are not pinned to old versions.
+        'workarounds:javaLTSVersions',
+    ],
     lockFileMaintenance: {
         enabled: true
     },
