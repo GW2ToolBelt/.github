@@ -5,6 +5,7 @@
     ],
     labels: ["a:chore", "in:dependencies"],
     enabledManagers: [
+        "custom.*",
         "gradle",
         "gradle-wrapper",
         "npm"
