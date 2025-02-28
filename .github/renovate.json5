@@ -9,7 +9,7 @@
         "gradle",
         "gradle-wrapper",
         "npm",
-        "pip_requirements"
+        "pip-compile"
     ],
     commitMessageExtra: "{ {{~#if isPinDigest}}{{{currentDigestShort}}}{{else}}{{#if currentVersion}}{{{currentVersion}}}{{else}}{{{currentDigestShort}}}{{/if}}{{/if}} => {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newVersion}}{{{newVersion}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if~}} }",
     customManagers: [
@@ -71,7 +71,7 @@
         },
         {
             description: "Update documentation dependencies",
-            matchManagers: ["pip_requirements"],
+            matchManagers: ["pip-compile"],
             addLabels: ["in:build", "in:docs"],
             semanticCommitScope: null,
             semanticCommitType: "build"
