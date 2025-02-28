@@ -82,5 +82,8 @@
     vulnerabilityAlerts: {
         enabled: true,
         vulnerabilityFixStrategy: "highest"
+    },
+    "pip-compile": {
+        fileMatch: ["(^|/)mkdocs-requirements\\.txt$"]
     }
 }
