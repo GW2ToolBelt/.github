@@ -10,6 +10,22 @@
         "npm"
     ],
     commitMessageExtra: "{ {{~#if isPinDigest}}{{{currentDigestShort}}}{{else}}{{#if currentVersion}}{{{currentVersion}}}{{else}}{{{currentDigestShort}}}{{/if}}{{/if}} => {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newVersion}}{{{newVersion}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if~}} }",
+    customManagers: [
+        // Update .java-version file with the latest JDK version
+        {
+            customType: "regex",
+            fileMatch: [
+                "\\.java-version$",
+            ],
+            matchStrings: [
+                "(?<currentValue>.*)\\n",
+            ],
+            datasourceTemplate: "java-version",
+            depNameTemplate: "java",
+            // Only write the major version.
+            extractVersionTemplate: "^(?<version>\\d+)"
+        }
+    ],
     dependencyDashboard: false,
     lockFileMaintenance: {
         enabled: true
