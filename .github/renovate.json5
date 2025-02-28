@@ -9,8 +9,7 @@
         "gradle",
         "gradle-wrapper",
         "npm",
-        "pip-compile",
-        "pip_requirements"
+        "pip-compile"
     ],
     commitMessageExtra: "{ {{~#if isPinDigest}}{{{currentDigestShort}}}{{else}}{{#if currentVersion}}{{{currentVersion}}}{{else}}{{{currentDigestShort}}}{{/if}}{{/if}} => {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newVersion}}{{{newVersion}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if~}} }",
     customManagers: [
@@ -86,11 +85,5 @@
     },
     "pip-compile": {
         fileMatch: ["(^|/)mkdocs-requirements\\.txt$"]
-    },
-    "pip_requirements": {
-        enabled: false
-    },
-    "pip_setup": {
-        enabled: false
     }
 }
