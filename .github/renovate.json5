@@ -60,6 +60,13 @@
             addLabels: ["in:build"],
             semanticCommitScope: null,
             semanticCommitType: "build"
+        },
+        {
+            description: "Update CI Java version",
+            matchFileNames: ["\\.java-version$"],
+            addLabels: ["in:build"],
+            semanticCommitScope: null,
+            semanticCommitType: "build"
         }
     ],
     prHourlyLimit: 0,
