@@ -19,7 +19,7 @@
                 "\\.java-version$",
             ],
             matchStrings: [
-                "(?<currentValue>.*)\\n?",
+                "(?<currentValue>\\S+)",
             ],
             datasourceTemplate: "java-version",
             depNameTemplate: "java",
