@@ -8,7 +8,8 @@
         "custom.regex",
         "gradle",
         "gradle-wrapper",
-        "npm"
+        "npm",
+        "pip_requirements"
     ],
     commitMessageExtra: "{ {{~#if isPinDigest}}{{{currentDigestShort}}}{{else}}{{#if currentVersion}}{{{currentVersion}}}{{else}}{{{currentDigestShort}}}{{/if}}{{/if}} => {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newVersion}}{{{newVersion}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if~}} }",
     customManagers: [
@@ -30,7 +31,7 @@
     dependencyDashboard: false,
     ignorePresets: [
         // Ensure we get the latest version and are not pinned to old versions.
-        'workarounds:javaLTSVersions',
+        'workarounds:javaLTSVersions'
     ],
     lockFileMaintenance: {
         enabled: true
@@ -65,6 +66,13 @@
             description: "Update CI Java version",
             matchFileNames: ["\\.java-version$"],
             addLabels: ["in:build"],
+            semanticCommitScope: null,
+            semanticCommitType: "build"
+        },
+        {
+            description: "Update documentation dependencies",
+            matchManagers: ["pip_requirements"],
+            addLabels: ["in:build", "in:docs"],
             semanticCommitScope: null,
             semanticCommitType: "build"
         }
