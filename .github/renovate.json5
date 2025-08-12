@@ -8,6 +8,7 @@
     ],
     labels: ["a:chore", "in:dependencies"],
     enabledManagers: [
+        "cargo",
         "custom.regex",
         "gradle",
         "gradle-wrapper",
