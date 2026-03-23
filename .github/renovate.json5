@@ -148,6 +148,29 @@
             "matchPackageNames": [
                 "/^org\\.jetbrains\\.kotlin[\\.:][\\w.-]*/"
             ]
+        },
+        {
+            /*
+             * Ktor is released slowly in multiple batches for the different platforms. Delay update PRs for a few days
+             * to make sure that we don't get them too early.
+             */
+            description: "Wait until Ktor has been fully released",
+            matchPackageNames: [
+                "io.ktor:**"
+            ],
+            minimumReleaseAge: "5 days"
+        },
+        {
+            /*
+             * For some reason, the Gradle team decided to put caching functionality behind stupidly invasive licensing
+             * terms. We won't upgrade to version 6.0.0 (or later) for now.
+             * (See also https://github.com/gradle/actions/releases/tag/v6.0.0)
+             */
+            "matchPackageNames": [
+                "gradle/actions"
+            ],
+            "allowedVersions": "<6.0.0",
+            "description": "Avoid GitHub Actions for Gradle commercial license restrictions"
         }
     ],
     prHourlyLimit: 0,
